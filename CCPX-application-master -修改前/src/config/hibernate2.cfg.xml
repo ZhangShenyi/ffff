@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver </property>   
+        <!--设置数据库的连接url:jdbc:mysql://localhost/hibernate,其中localhost表示mysql服务器名称，此处为本机，    hibernate是数据库名-->    
+        <property name="hibernate.connection.url">jdbc:mysql://yifanslab.cn:3306/temp_user_functi?useUnicode=true&amp;characterEncoding=utf-8 </property>   
+        <!--连接数据库是用户名-->   
+        <property name="hibernate.connection.username">temp_user_functi</property>   
+        <!--连接数据库是密码-->   
+        <property name="hibernate.connection.password">qwerty65536</property>          
+        <!--数据库连接池的大小-->   
+        <property name="hibernate.connection.pool.size">20 </property>          
+        <!--是否在后台显示Hibernate用到的SQL语句，开发时设置为true，便于差错，程序运行时可以在Eclipse的控制台显示Hibernate的执行Sql语句。项目部署后可以设置为false，提高运行效率-->   
+        <property name="hibernate.show_sql">true </property>   
+		<!-- 方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+		<!-- 控制台显示SQL -->
+		<property name="show_sql">true</property>
+
+		<property name="hibernate.format_sql">true</property>
+		
+
+		<!-- 自动更新表结构 -->
+		<property name="hbm2ddl.auto">update</property>
+		
+		<property name="hibernate.connection.autocommit">true</property> 
+		<mapping resource="classpath:model/*.hbm.xml"/> 
+
+	    
+        
+	</session-factory>
+
+</hibernate-configuration>
